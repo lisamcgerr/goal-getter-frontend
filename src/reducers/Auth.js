@@ -1,5 +1,4 @@
-import { LOGIN_SUCCESS, CURRENT_USER, LOGOUT } from '../actions/ActionTypes'
-import authReducer from './Auth'
+import { LOGIN_SUCCESS, CURRENT_USER, LOGOUT } from '../actions/Actiontypes'
 
 function authReducer(state = null, action){
     switch(action.type) {
