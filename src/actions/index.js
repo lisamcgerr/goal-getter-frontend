@@ -7,6 +7,7 @@ import {    LOGIN_SUCCESS,
             CREATE_GOAL,
             DELETE_GOAL,
             UPDATE_GOAL } from './Actiontypes'
+            
 
 export function loginSuccess(user){
     return {
