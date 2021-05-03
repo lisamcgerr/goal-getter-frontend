@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Segment, Form, Grid } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { loginSuccess } from '../actions/index'
 
 
 class Login extends React.Component {
@@ -15,36 +17,36 @@ class Login extends React.Component {
     })
 }
 
-// handleSubmit = (e) => {
-//     e.preventDefault()
+handleSubmit = (e) => {
+    e.preventDefault()
 
-//     const reqObj = {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body:  JSON.stringify(this.state)
-//     }
+    const reqObj = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:  JSON.stringify(this.state)
+    }
 
-//     fetch('http://localhost:3000/login', reqObj)
-//     .then(resp => resp.json())
-//     .then(data => {
-//         console.log('data', data)
-//         if (data.error){
-//             this.setState({
-//                 error: data.error
-//             })
-//         } else {
-//             this.props.loginSuccess(data.user)
-//             localStorage.setItem('myAppToken', data.token)
-//             this.setState({
-//                 username: '',
-//                 password: '',
-//                 error: ''})
-//             this.props.history.push('/home')
-//         }
-//     })
-// }
+    fetch('http://localhost:3000/login', reqObj)
+    .then(resp => resp.json())
+    .then(data => {
+        console.log('data', data)
+        if (data.error){
+            this.setState({
+                error: data.error
+            })
+        } else {
+            this.props.loginSuccess(data.user)
+            localStorage.setItem('myAppToken', data.token)
+            this.setState({
+                username: '',
+                password: '',
+                error: ''})
+            this.props.history.push('/home')
+        }
+    })
+}
   
   render(){
     return(
@@ -78,4 +80,8 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+const mapDispatchToProps = {
+  loginSuccess: loginSuccess
+}
+
+export default connect(null, mapDispatchToProps)(Login)
