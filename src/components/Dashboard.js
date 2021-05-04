@@ -8,6 +8,13 @@ class Dashboard extends React.Component {
     return(
       <>
       This is the dashboard component
+
+      layout: 
+      users name
+      list of goals - with semantic UI loading bars
+      button to edit goal
+      button to delete goal
+      button to update username in the top corner
       </>
     )
   }
