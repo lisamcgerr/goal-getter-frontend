@@ -4,18 +4,18 @@ import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
 
 
-class Login extends React.Component {
-  state = {
-    username: '',
-    password: '',
-    error: ''
+  class Login extends React.Component {
+    state = {
+      username: 'lisas_learning',
+      password: 'coding',
+      error: ''
   }
 
   handleInput = (e) => { 
     this.setState({
       [e.target.name]: e.target.value
     })
-}
+  }
 
 handleSubmit = (e) => {
     e.preventDefault()
@@ -56,7 +56,14 @@ handleSubmit = (e) => {
         <h1>Login</h1>
           <Form onSubmit={this.handleSubmit} size='large'>
             <Segment inverted stacked>
-              <Form.Input fluid icon='user' iconPosition='left' name={'username'} onChange={this.handleInput} value={this.state.username} placeholder='username' />
+              <Form.Input 
+                  fluid 
+                  icon='user' 
+                  iconPosition='left' 
+                  name={'username'} 
+                  onChange={this.handleInput} 
+                  value={this.state.username} 
+                  placeholder='username' />
                 <Form.Input
                   fluid
                   icon='lock'
