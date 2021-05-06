@@ -4,6 +4,13 @@ import { createGoal, deleteGoal, deleteUser, updateGoal, updateUser } from '../a
 
 
 class Dashboard extends React.Component {
+
+  state = { percent: 33 }
+  increment = () =>
+    this.setState((prevState) => ({
+      percent: prevState.percent >= 100 ? 0 : prevState.percent + 20,
+    }))
+
   render(){
     return(
       <>
@@ -15,6 +22,12 @@ class Dashboard extends React.Component {
       button to edit goal
       button to delete goal
       button to update username in the top corner
+
+
+      <div>
+        <Progress percent={this.state.percent} indicating />
+        <Button onClick={this.increment}>Increment</Button>
+      </div>
       </>
     )
   }
