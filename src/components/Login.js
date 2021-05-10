@@ -23,7 +23,8 @@ handleSubmit = (e) => {
     const reqObj = {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body:  JSON.stringify(this.state)
     }

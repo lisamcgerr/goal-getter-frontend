@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createGoal, deleteGoal, deleteUser, updateGoal, updateUser } from '../actions'
-
+import Grid from '@material-ui/core/Grid'
 
 class Dashboard extends React.Component {
 
@@ -13,22 +13,8 @@ class Dashboard extends React.Component {
 
   render(){
     return(
-      <>
-      This is the dashboard component
-
-      layout: 
-      users name
-      list of goals - with semantic UI loading bars
-      button to edit goal
-      button to delete goal
-      button to update username in the top corner
-
-
-      <div>
-        <Progress percent={this.state.percent} indicating />
-        <Button onClick={this.increment}>Increment</Button>
-      </div>
-      </>
+      <Grid item xs={3}> 
+      </Grid>
     )
   }
 }
